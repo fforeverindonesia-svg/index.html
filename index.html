@@ -1,173 +1,277 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="id">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>F'Forever World Tour</title>
+<title>F'FOREVER Ticket</title>
 
-<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
+<style>
+
+/* GLOBAL */
+body{
+    margin:0;
+    font-family:'Poppins',sans-serif;
+    background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+    color:white;
+}
+
+/* CONTAINER */
+.container{
+    max-width:900px;
+    margin:auto;
+    padding:20px;
+}
+
+/* HEADER */
+.header img{
+    width:100%;
+    height:230px;
+    object-fit:cover;
+    border-radius:20px;
+    box-shadow:0 0 30px rgba(0,255,255,0.5);
+}
+
+/* TITLE */
+.title{
+    text-align:center;
+    font-size:28px;
+    font-weight:600;
+    margin-top:15px;
+}
+
+.subtitle{
+    text-align:center;
+    color:#00eaff;
+    margin-bottom:20px;
+}
+
+/* BOX */
+.box{
+    background:rgba(255,255,255,0.05);
+    border:1px solid rgba(0,255,255,0.2);
+    border-radius:15px;
+    padding:20px;
+    margin-bottom:20px;
+    backdrop-filter:blur(10px);
+}
+
+/* INPUT */
+input, select{
+    width:100%;
+    padding:12px;
+    margin:8px 0;
+    border:none;
+    border-radius:10px;
+    background:rgba(0,0,0,0.5);
+    color:white;
+}
+
+/* TICKET */
+.ticket{
+    display:flex;
+    justify-content:space-between;
+    padding:12px;
+    border-radius:10px;
+    margin:5px 0;
+    border:1px solid rgba(255,255,255,0.2);
+    cursor:pointer;
+}
+
+.ticket:hover{
+    background:rgba(0,255,255,0.1);
+}
+
+/* BUTTON */
+button{
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:15px;
+    background:linear-gradient(90deg,#00eaff,#007bff);
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+}
+
+button:hover{
+    box-shadow:0 0 20px #00eaff;
+}
+
+/* TOTAL */
+#total{
+    font-weight:bold;
+    text-align:center;
+    background:#000;
+}
+
+/* QRIS */
+#qrisBox{
+    display:none;
+    text-align:center;
+    margin-top:20px;
+    opacity:0;
+    transition:0.5s;
+}
+
+#qrisBox img{
+    width:100%;
+    max-width:300px;
+    border-radius:15px;
+    box-shadow:0 0 20px #00eaff;
+}
+
+/* SUCCESS */
+.success{
+    text-align:center;
+    font-size:18px;
+    margin-top:15px;
+    color:#00ffcc;
+}
+
+</style>
 </head>
 
 <body>
 
-<header>
+<div class="container">
 
-<nav>
+<!-- HEADER -->
+<div class="header">
+<img src="header.jpg" onerror="this.src='https://via.placeholder.com/900x230'">
+</div>
 
-<h1 class="logo">F'FOREVER</h1>
+<div class="title">FORM PEMBELIAN TIKET</div>
+<div class="title">F'FOREVER</div>
+<div class="subtitle">29 - 30 Mei | Indonesia Arena</div>
 
+<form id="form">
+
+<!-- DATA -->
+<div class="box">
+<h3>DATA PEMBELI</h3>
+
+<input type="text" id="nama" placeholder="Nama Lengkap" required>
+<input type="email" id="email" placeholder="Email Aktif" required>
+<input type="text" id="wa" placeholder="Nomor WhatsApp" required>
+<input type="text" id="kota" placeholder="Kota Domisili">
+
+</div>
+
+<!-- TIKET -->
+<div class="box">
+<h3>PILIHAN TIKET</h3>
+
+<label class="ticket">
+<input type="radio" name="tiket" value="1250000"> Bronze - IDR 1.250.000
+</label>
+
+<label class="ticket">
+<input type="radio" name="tiket" value="1450000"> Silver - IDR 1.450.000
+</label>
+
+<label class="ticket">
+<input type="radio" name="tiket" value="2100000"> Gold - IDR 2.100.000
+</label>
+
+<label class="ticket">
+<input type="radio" name="tiket" value="3950000"> Diamond VIP - IDR 3.950.000
+</label>
+
+<label class="ticket">
+<input type="radio" name="tiket" value="4500000"> Super VVIP - IDR 4.500.000
+</label>
+
+<select id="jumlah">
+<option value="1">Jumlah Tiket: 1</option>
+<option value="2">Jumlah Tiket: 2</option>
+<option value="3">Jumlah Tiket: 3</option>
+</select>
+
+<input type="text" id="total" placeholder="Total Pembayaran" readonly>
+
+</div>
+
+<!-- PEMBAYARAN -->
+<div class="box">
+<h3>METODE PEMBAYARAN</h3>
+
+<label><input type="radio" name="bayar" value="QRIS"> QRIS</label>
+<label><input type="radio" name="bayar" value="Transfer"> Transfer Bank</label>
+<label><input type="radio" name="bayar" value="Ewallet"> E-Wallet</label>
+
+</div>
+
+<!-- CATATAN -->
+<div class="box">
 <ul>
-
-<li><a href="#home">Home</a></li>
-<li><a href="#event">Event</a></li>
-<li><a href="#tickets">Tickets</a></li>
-<li><a href="#buy">Buy</a></li>
-
+<li>Harga belum termasuk pajak</li>
+<li>Tiket tidak dapat dikembalikan</li>
 </ul>
 
-</nav>
-
-</header>
-
-<section id="home" class="hero">
-
-<div class="hero-text">
-
-<h2>F'FOREVER</h2>
-<h3>1st World Tour</h3>
-
-<p>Indonesia Arena • Jakarta</p>
-
-<a href="#buy" class="btn">GET TICKETS</a>
+<label><input type="checkbox" required> Saya setuju dengan syarat</label>
 
 </div>
 
-</section>
-
-
-<section id="event" class="event">
-
-<h2>Event Information</h2>
-
-<div class="event-grid">
-
-<div>
-<h3>Date</h3>
-<p>29 May 2024</p>
-</div>
-
-<div>
-<h3>Location</h3>
-<p>Indonesia Arena</p>
-</div>
-
-<div>
-<h3>City</h3>
-<p>Jakarta, Indonesia</p>
-</div>
-
-</div>
-
-</section>
-
-
-<section class="seating">
-
-<h2>Seating Map</h2>
-
-<img src="assets/seating.png">
-
-</section>
-
-
-<section id="tickets" class="tickets">
-
-<h2>Ticket Categories</h2>
-
-<div class="ticket-grid">
-
-<div class="ticket">
-<h3>Bronze</h3>
-<p>IDR 1.250.000</p>
-</div>
-
-<div class="ticket">
-<h3>Silver</h3>
-<p>IDR 1.450.000</p>
-</div>
-
-<div class="ticket">
-<h3>Gold</h3>
-<p>IDR 2.100.000</p>
-</div>
-
-<div class="ticket">
-<h3>Diamond VIP</h3>
-<p>IDR 3.950.000</p>
-</div>
-
-<div class="ticket">
-<h3>Super VVIP</h3>
-<p>IDR 4.500.000</p>
-</div>
-
-</div>
-
-</section>
-
-
-
-<section id="buy" class="buy">
-
-<h2>Buy Tickets</h2>
-
-<form>
-
-<input type="text" placeholder="Full Name">
-
-<input type="email" placeholder="Email">
-
-<input type="text" placeholder="WhatsApp">
-
-<select id="ticket">
-
-<option value="1250000">Bronze</option>
-<option value="1450000">Silver</option>
-<option value="2100000">Gold</option>
-<option value="3950000">Diamond VIP</option>
-<option value="4500000">Super VVIP</option>
-
-</select>
-
-<select id="qty">
-
-<option value="1">1 Ticket</option>
-<option value="2">2 Ticket</option>
-<option value="3">3 Ticket</option>
-
-</select>
-
-<p>Total: IDR <span id="total">1250000</span></p>
-
-<button type="button" onclick="order()">Submit Order</button>
+<button type="submit">SUBMIT ORDER</button>
 
 </form>
 
-</section>
+<!-- QRIS -->
+<div id="qrisBox">
+<h3>Scan untuk bayar</h3>
+<img src="qris.png" onerror="this.src='https://via.placeholder.com/300'">
+<p>Kirim bukti pembayaran ke admin</p>
+<div class="success">Pesanan berhasil dibuat</div>
+</div>
 
+</div>
 
-<footer>
+<script>
 
-<p>© 2026 F'Forever Indonesia</p>
+const tiket=document.getElementsByName('tiket');
+const jumlah=document.getElementById('jumlah');
+const total=document.getElementById('total');
+const form=document.getElementById('form');
+const qrisBox=document.getElementById('qrisBox');
 
-</footer>
+function hitung(){
+let harga=0;
 
+tiket.forEach(t=>{
+if(t.checked) harga=parseInt(t.value);
+});
 
-<script src="script.js"></script>
+let qty=parseInt(jumlah.value);
+total.value="IDR "+(harga*qty).toLocaleString();
+}
+
+tiket.forEach(t=>t.addEventListener('change',hitung));
+jumlah.addEventListener('change',hitung);
+
+form.addEventListener('submit',function(e){
+e.preventDefault();
+
+hitung();
+
+if(total.value===""){
+alert("Pilih tiket dulu!");
+return;
+}
+
+qrisBox.style.display="block";
+
+setTimeout(()=>{
+qrisBox.style.opacity="1";
+},100);
+
+qrisBox.scrollIntoView({behavior:"smooth"});
+
+});
+
+</script>
 
 </body>
 </html>
