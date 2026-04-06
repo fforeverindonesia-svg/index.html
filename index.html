@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>F'Forever World Tour</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<header>
+
+<nav>
+
+<h1 class="logo">F'FOREVER</h1>
+
+<ul>
+
+<li><a href="#home">Home</a></li>
+<li><a href="#event">Event</a></li>
+<li><a href="#tickets">Tickets</a></li>
+<li><a href="#buy">Buy</a></li>
+
+</ul>
+
+</nav>
+
+</header>
+
+<section id="home" class="hero">
+
+<div class="hero-text">
+
+<h2>F'FOREVER</h2>
+<h3>1st World Tour</h3>
+
+<p>Indonesia Arena • Jakarta</p>
+
+<a href="#buy" class="btn">GET TICKETS</a>
+
+</div>
+
+</section>
+
+
+<section id="event" class="event">
+
+<h2>Event Information</h2>
+
+<div class="event-grid">
+
+<div>
+<h3>Date</h3>
+<p>29 May 2024</p>
+</div>
+
+<div>
+<h3>Location</h3>
+<p>Indonesia Arena</p>
+</div>
+
+<div>
+<h3>City</h3>
+<p>Jakarta, Indonesia</p>
+</div>
+
+</div>
+
+</section>
+
+
+<section class="seating">
+
+<h2>Seating Map</h2>
+
+<img src="assets/seating.png">
+
+</section>
+
+
+<section id="tickets" class="tickets">
+
+<h2>Ticket Categories</h2>
+
+<div class="ticket-grid">
+
+<div class="ticket">
+<h3>Bronze</h3>
+<p>IDR 1.250.000</p>
+</div>
+
+<div class="ticket">
+<h3>Silver</h3>
+<p>IDR 1.450.000</p>
+</div>
+
+<div class="ticket">
+<h3>Gold</h3>
+<p>IDR 2.100.000</p>
+</div>
+
+<div class="ticket">
+<h3>Diamond VIP</h3>
+<p>IDR 3.950.000</p>
+</div>
+
+<div class="ticket">
+<h3>Super VVIP</h3>
+<p>IDR 4.500.000</p>
+</div>
+
+</div>
+
+</section>
+
+
+
+<section id="buy" class="buy">
+
+<h2>Buy Tickets</h2>
+
+<form>
+
+<input type="text" placeholder="Full Name">
+
+<input type="email" placeholder="Email">
+
+<input type="text" placeholder="WhatsApp">
+
+<select id="ticket">
+
+<option value="1250000">Bronze</option>
+<option value="1450000">Silver</option>
+<option value="2100000">Gold</option>
+<option value="3950000">Diamond VIP</option>
+<option value="4500000">Super VVIP</option>
+
+</select>
+
+<select id="qty">
+
+<option value="1">1 Ticket</option>
+<option value="2">2 Ticket</option>
+<option value="3">3 Ticket</option>
+
+</select>
+
+<p>Total: IDR <span id="total">1250000</span></p>
+
+<button type="button" onclick="order()">Submit Order</button>
+
+</form>
+
+</section>
+
+
+<footer>
+
+<p>© 2026 F'Forever Indonesia</p>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
